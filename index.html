@@ -3,215 +3,37 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nicholas Stefan Georgescu, Ph.D. — Mathematician, Scientist, Engineer</title>
-<style>
-  :root {
-    --bg: #0e0b0c;
-    --bg-soft: #161112;
-    --bg-card: #181315;
-    --fg: #f3ece9;
-    --fg-dim: #b9aca8;
-    --fg-faint: #786a66;
-    --accent: #8a2a3a;
-    --accent-soft: #c45a6c;
-    --rule: #2a1f22;
-    --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
-    --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--fg); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
-  a { color: var(--accent-soft); text-decoration: none; transition: color 0.15s; }
-  a:hover { color: var(--fg); }
-
-  /* NAV */
-  nav {
-    position: sticky; top: 0; z-index: 10;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1.2rem 2.5rem;
-    background: rgba(14, 11, 12, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-  }
-  .logo { font-family: var(--serif); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--accent-soft); }
-  nav ul { list-style: none; display: flex; gap: 2rem; }
-  nav ul a { color: var(--fg-dim); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.18em; }
-  nav ul a:hover { color: var(--accent-soft); }
-
-  /* HERO */
-  .hero {
-    display: grid; grid-template-columns: 1.1fr 1fr;
-    min-height: 88vh; align-items: center;
-    padding: 4rem 5rem; gap: 4rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .hero-text h1 {
-    font-family: var(--serif); font-weight: 400;
-    font-size: clamp(2.5rem, 4.8vw, 4.2rem); line-height: 1.05;
-    margin-bottom: 1.5rem;
-  }
-  .hero-text h1 em { color: var(--accent-soft); font-style: italic; }
-  .tagline {
-    font-size: 1.05rem; color: var(--fg-dim);
-    letter-spacing: 0.04em; max-width: 38ch;
-    margin-bottom: 2.5rem; line-height: 1.6;
-  }
-  .cta {
-    display: inline-block; padding: 0.85rem 1.8rem;
-    border: 1px solid var(--accent); color: var(--fg);
-    font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
-    transition: background 0.2s ease;
-  }
-  .cta:hover { background: var(--accent); color: var(--fg); }
-  .hero-portrait {
-    position: relative; aspect-ratio: 3 / 4;
-    background: linear-gradient(135deg, #1a1214 0%, #2a1820 100%);
-    border: 1px solid var(--rule);
-    overflow: hidden;
-  }
-  .hero-portrait img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    filter: saturate(0.85) contrast(1.02);
-  }
-
-  /* SECTIONS */
-  section.content { max-width: 960px; margin: 0 auto; padding: 7rem 2rem; }
-  .eyebrow { color: var(--accent-soft); font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1.5rem; }
-  h2.section-title { font-family: var(--serif); font-weight: 400; font-size: 2.8rem; margin-bottom: 2.5rem; line-height: 1.15; }
-  h3.sub-title { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; margin: 3rem 0 1.2rem; color: var(--fg); }
-
-  .bio p {
-    font-family: var(--serif); font-size: 1.25rem; line-height: 1.75;
-    color: var(--fg); margin-bottom: 1.6rem;
-  }
-  .bio p.dim { color: var(--fg-dim); }
-
-  /* CARDS */
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
-  .card {
-    background: var(--bg-card); border: 1px solid var(--rule);
-    padding: 1.5rem; transition: border-color 0.2s;
-  }
-  .card:hover { border-color: var(--accent); }
-  .card h4 { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; margin-bottom: 0.6rem; }
-  .card h4 a { color: var(--fg); }
-  .card h4 a:hover { color: var(--accent-soft); }
-  .card p { color: var(--fg-dim); font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.8rem; }
-  .card .tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-faint); }
-
-  /* PUBLICATIONS */
-  ol.pubs { list-style: none; counter-reset: pubs; }
-  ol.pubs li {
-    counter-increment: pubs;
-    padding: 1.2rem 0 1.2rem 3rem;
-    border-bottom: 1px solid var(--rule);
-    position: relative;
-    font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;
-    color: var(--fg-dim);
-  }
-  ol.pubs li::before {
-    content: counter(pubs, decimal-leading-zero);
-    position: absolute; left: 0; top: 1.3rem;
-    font-family: var(--sans); font-size: 0.75rem;
-    color: var(--accent-soft); letter-spacing: 0.15em;
-  }
-  ol.pubs li .title { color: var(--fg); font-style: italic; }
-  ol.pubs li .venue { color: var(--accent-soft); }
-
-  /* TIMELINE */
-  .timeline { border-left: 1px solid var(--rule); padding-left: 2rem; margin-top: 2rem; }
-  .timeline-item { padding-bottom: 2rem; position: relative; }
-  .timeline-item::before {
-    content: ""; position: absolute; left: -2.32rem; top: 0.6rem;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent); border: 2px solid var(--bg);
-  }
-  .timeline-item .role { font-family: var(--serif); font-size: 1.25rem; color: var(--fg); }
-  .timeline-item .org { color: var(--accent-soft); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .timeline-item .when { color: var(--fg-faint); font-size: 0.8rem; margin-top: 0.3rem; }
-
-  /* TODO LIST */
-  ul.todo { list-style: none; margin-top: 1.5rem; }
-  ul.todo li {
-    padding: 0.9rem 0 0.9rem 2.2rem;
-    border-bottom: 1px dashed var(--rule);
-    position: relative;
-    color: var(--fg-dim); font-family: var(--serif); font-size: 1.1rem;
-  }
-  ul.todo li::before {
-    content: "☐"; position: absolute; left: 0; top: 0.7rem;
-    color: var(--accent); font-size: 1.3rem;
-  }
-
-  /* QUOTE */
-  .quote {
-    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
-    padding: 6rem 2rem; text-align: center; background: var(--bg-soft);
-  }
-  .quote blockquote {
-    font-family: var(--serif); font-style: italic;
-    font-size: clamp(1.4rem, 2.6vw, 2.1rem); line-height: 1.5;
-    max-width: 800px; margin: 0 auto 1.5rem; color: var(--fg);
-  }
-  .quote cite {
-    font-family: var(--sans); font-style: normal; color: var(--accent-soft);
-    font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
-  }
-
-  /* FOOTER */
-  footer { padding: 4rem 2rem; text-align: center; color: var(--fg-dim);
-           font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
-           border-top: 1px solid var(--rule); }
-  footer .socials { margin-bottom: 1.5rem; }
-  footer .socials a { margin: 0 0.9rem; }
-  footer .disambig { font-family: var(--serif); font-size: 0.85rem;
-                     letter-spacing: 0; text-transform: none;
-                     color: var(--fg-faint); margin-top: 1.5rem;
-                     max-width: 600px; margin-left: auto; margin-right: auto;
-                     font-style: italic; }
-
-  @media (max-width: 800px) {
-    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-    .hero-portrait { aspect-ratio: 4 / 5; }
-    nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
-    nav ul { gap: 0.9rem; }
-    nav ul a { font-size: 0.65rem; }
-    section.content { padding: 4rem 1.5rem; }
-    h2.section-title { font-size: 2rem; }
-  }
-</style>
+<title>Nicholas Stefan Georgescu, Ph.D.</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <div class="logo">NSG</div>
+<nav class="top">
+  <a href="/" class="logo">NSG</a>
   <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#mathematician">Mathematician</a></li>
-    <li><a href="#scientist">Scientist</a></li>
-    <li><a href="#engineer">Engineer</a></li>
-    <li><a href="#games">Games</a></li>
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="math.html">Math</a></li>
+    <li><a href="science.html">Science</a></li>
+    <li><a href="games/">Games</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<section class="hero" id="about">
+<section class="hero">
   <div class="hero-text">
     <h1>Nicholas Stefan Georgescu, <em>Ph.D.</em></h1>
     <p class="tagline">
       Applied mathematician. Director-level AI engineering leader.
-      A lifelong study of <em>structure, number, and form</em> &mdash;
-      from discrete mathematics and electrochemical transport
-      to production agentic AI systems.
+      Discrete math &amp; electrochemical transport in the past;
+      production agentic AI systems in the present.
     </p>
-    <a class="cta" href="#about-long">Read More</a>
+    <a class="cta" href="#about">Read More</a>
   </div>
   <div class="hero-portrait"><img src="profile_pic_nsg.jpg" alt="Nicholas Stefan Georgescu"></div>
 </section>
 
-<section class="content bio" id="about-long">
+<section class="content bio" id="about">
   <h2 class="section-title">About</h2>
-
   <p>
     Nicholas Stefan Georgescu is a mathematician, electrochemist, and engineer.
     He began college at fifteen, holds a B.S. in Biochemistry and a B.A. in Philosophy
@@ -220,7 +42,6 @@
     electrochemical transport phenomena produced more than ten peer-reviewed
     publications &mdash; more than double the typical output for the program.
   </p>
-
   <p class="dim">
     After postdoctoral appointments at the University of Utah (Henry S.&nbsp;White lab)
     and McGill University (Janine Mauzeroll lab), he turned toward applied work:
@@ -231,164 +52,92 @@
     Director of Data Science &amp; AI he directs delivery across five concurrent
     enterprise engagements and authored the firm's reusable Claude Code delivery system.
   </p>
-
   <p>
     Alongside this professional arc he has maintained a continuous private research
-    practice in discrete mathematics &mdash; problems in combinatorics, intransitive
-    structures, the Hydra game, and the recursive arithmetic of multi-step reactions
-    &mdash; published on GitHub, PyPI, the AUR, and the OEIS.
+    practice in discrete mathematics &mdash; published on
+    <a href="https://github.com/NGeorgescu">GitHub</a>,
+    <a href="https://pypi.org/user/NGeorgescu/">PyPI</a>,
+    the <a href="https://aur.archlinux.org/packages?SeB=m&K=NGeorgescu">AUR</a>,
+    and <a href="https://oeis.org/wiki/User:Nicholas_Stefan_Georgescu">OEIS</a>.
   </p>
 </section>
 
-<!-- ============ MATH ============ -->
-<section class="content" id="mathematician">
-  <h2 class="section-title">Math</h2>
-  <div class="cards">
-
-    <div class="card">
-      <h4><a href="https://github.com/NGeorgescu/math_problems">math_problems</a></h4>
-      <p>An ongoing exploration of problems in discrete mathematics &mdash; Jupyter notebooks of proofs, computations, and small results.</p>
-      <span class="tag">Jupyter · Open Source</span>
-    </div>
-
-    <div class="card">
-      <h4><a href="https://github.com/NGeorgescu/Intransitive_dice">Intransitive Dice</a></h4>
-      <p>
-        Work on intransitive dice sets for n&nbsp;&ge;&nbsp;4 players. Not the first
-        to investigate intransitive dice, but the first to prove the methods
-        used here generalize to larger sets &mdash; a construction of
-        23 eleven-sided dice satisfying the four-player condition (later improved
-        by Youhua Li with 19 dice of 171 faces).
-      </p>
-      <span class="tag">Python · Combinatorics</span>
-    </div>
-
-    <div class="card">
-      <h4><a href="https://github.com/NGeorgescu/Hydra-Game">Hydra-Game</a></h4>
-      <p>What is the length of a 5-hydra? An exploration of the Kirby&ndash;Paris hydra and the rates at which it terminates.</p>
-      <span class="tag">Jupyter · Logic</span>
-    </div>
-
-    <div class="card">
-      <h4><a href="https://github.com/NGeorgescu/ProjectEulerOneLiners">Project Euler One-Liners</a></h4>
-      <p>Project Euler solutions compressed to a single expression each &mdash; a recreational exercise in clarity through density.</p>
-      <span class="tag">Python · Recreational</span>
-    </div>
-
-  </div>
-
-  <p style="margin-top: 2rem; font-family: var(--serif); font-size: 1.05rem; color: var(--fg-dim); line-height: 1.7;">
-    Sequences contributed at
-    <a href="https://oeis.org/wiki/User:Nicholas_Stefan_Georgescu">oeis.org/wiki/User:Nicholas_Stefan_Georgescu</a>.
-  </p>
-</section>
-
-<!-- ============ SCIENCE ============ -->
-<section class="content" id="scientist">
-  <h2 class="section-title">Science</h2>
-
-  <h3 class="sub-title">Publications</h3>
-  <ol class="pubs">
-    <li><span class="title">A Critical Assessment of X<sub>H<sub>2</sub>O<sub>2</sub></sub>...</span> &mdash; Georgescu, N.S.; Jebaraj, A.J.J.; Scherson, D. (2015). <span class="venue">ECS Electrochem. Letters 4(6), F39&ndash;F42.</span></li>
-
-    <li><span class="title">The Oxidation of Bromide on Platinum Electrodes...</span> &mdash; Xu, J.; Georgescu, N.S.; Scherson, D.A. (2014). <span class="venue">J. Electrochem. Soc. 161(6), H392&ndash;H398.</span></li>
-
-    <li><span class="title">Rotating Ring-Disk Electrode Method...</span> &mdash; Feng, Z.; Georgescu, N.S.; Scherson, D.A. (2016). <span class="venue">Anal. Chem. 88(2), 1088&ndash;1091.</span></li>
-
-    <li><span class="title"><a href="https://doi.org/10.1149/2.0211608jes">Communication&mdash;Hydrogen Peroxide Reduction in Aqueous Electrolytes: Influence of a Heterogeneous Decomposition Step</a></span> &mdash; Georgescu, N.S.; Scherson, D.A. (2016). <span class="venue">J. Electrochem. Soc. 163(8), H630&ndash;H632.</span></li>
-
-    <li><span class="title">Oxygen and Hydrogen Peroxide Reduction...</span> &mdash; Jebaraj et al.; Georgescu, N.S.; Scherson, D.A. (2016). <span class="venue">J. Phys. Chem. C 120(29), 16090&ndash;16099.</span></li>
-
-    <li><span class="title">Further Developments in Ohmic Microscopy.</span> &mdash; Feng, Z.; Georgescu, N.S.; Scherson, D.A. (2017). <span class="venue">Russ. J. Electrochem. 53(9), 1003&ndash;1010.</span></li>
-
-    <li><span class="title">Theoretical Analysis of Microelectrode Arrays...</span> &mdash; Georgescu, N.S.; Scherson, D.A. (2017). <span class="venue">J. Electrochem. Soc. 164(11), E3022&ndash;E3025.</span></li>
-
-    <li><span class="title">The Electrocatalytic Properties of Adsorbed Hemin...</span> &mdash; Kannan et al.; Georgescu, N.S.; Scherson, D.A. (2017). <span class="venue">J. Electroanal. Chem. 793, 250&ndash;256.</span></li>
-
-    <li><span class="title">Comments Regarding the Non-Miscible Solvent Microcapillary Method...</span> &mdash; Feng, Z.; Georgescu, N.S.; Scherson, D.A. (2017). <span class="venue">J. Electrochem. Soc. 164(2), H148&ndash;H152.</span></li>
-
-    <li><span class="title">Electrocatalytic Properties of Adsorbed Halides...</span> &mdash; Jebaraj et al.; Georgescu, N.S.; Scherson, D.A. (2017). <span class="venue">J. Electroanal. Chem.</span></li>
-  </ol>
-
-  <h3 class="sub-title">Academic Timeline</h3>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="role">B.S. Biochemistry · B.A. Philosophy</div>
-      <div class="org">Northern Kentucky University</div>
-      <div class="when">August 2005 – May 2011 · Entered college at age 15</div>
-    </div>
-    <div class="timeline-item">
-      <div class="role">Ph.D. in Mathematics, Aspects of Electrochemical Transport Phenomena</div>
-      <div class="org">Case Western Reserve University · Advisor: Daniel A. Scherson</div>
-      <div class="when">August 2011 – January 2017</div>
-    </div>
-    <div class="timeline-item">
-      <div class="role">Postdoctoral Researcher</div>
-      <div class="org">University of Utah · Advisor: Henry S. White</div>
-      <div class="when">February 2017 – March 2018</div>
-    </div>
-    <div class="timeline-item">
-      <div class="role">Postdoctoral Fellow</div>
-      <div class="org">McGill University · Advisor: Janine Mauzeroll</div>
-      <div class="when">June 2018 – November 2018</div>
-    </div>
-    <div class="timeline-item">
-      <div class="role">Research Associate</div>
-      <div class="org">Case Western Reserve University</div>
-      <div class="when">November 2018 – December 2019</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ENGINEERING ============ -->
-<section class="content" id="engineer">
-  <h2 class="section-title">Engineering</h2>
-
-  <h3 class="sub-title">Open Source</h3>
-  <p style="font-family: var(--serif); font-size: 1.1rem; color: var(--fg-dim); line-height: 1.9;">
-    Full lists of packages and repositories live on their respective profiles:<br>
-    &mdash; <a href="https://pypi.org/user/NGeorgescu/">PyPI &mdash; pypi.org/user/NGeorgescu</a><br>
-    &mdash; <a href="https://aur.archlinux.org/packages?SeB=m&K=NGeorgescu">AUR &mdash; Arch User Repository</a><br>
-    &mdash; <a href="https://github.com/NGeorgescu">GitHub &mdash; github.com/NGeorgescu</a>
-  </p>
-  <div class="cards">
-    <div class="card"><h4><a href="https://github.com/NGeorgescu/dotfiles">dotfiles</a></h4><p>Personal dotfiles for Debian / i3.</p><span class="tag">Shell</span></div>
-  </div>
-
-  <h3 class="sub-title">Industry</h3>
+<section class="content" id="experience">
+  <h2 class="section-title">Experience</h2>
   <div class="timeline">
     <div class="timeline-item">
       <div class="role">Director, Data Science &amp; AI</div>
       <div class="org">Syrv.ai · Covington, KY</div>
-      <div class="when">May 2025 – May 2026</div>
+      <div class="when">May 2025 &ndash; Present</div>
     </div>
     <div class="timeline-item">
-      <div class="role">Senior Data Science Manager → Senior Data Scientist → Data Scientist</div>
+      <div class="role">Senior Data Science Manager &rarr; Senior Data Scientist &rarr; Data Scientist</div>
       <div class="org">Archer Daniels Midland · Erlanger, KY</div>
-      <div class="when">January 2020 – May 2025</div>
+      <div class="when">January 2020 &ndash; May 2025</div>
+    </div>
+    <div class="timeline-item">
+      <div class="role">Research Associate</div>
+      <div class="org">Case Western Reserve University</div>
+      <div class="when">November 2018 &ndash; December 2019</div>
+    </div>
+    <div class="timeline-item">
+      <div class="role">Postdoctoral Fellow</div>
+      <div class="org">McGill University · Advisor: Janine Mauzeroll</div>
+      <div class="when">June 2018 &ndash; November 2018</div>
+    </div>
+    <div class="timeline-item">
+      <div class="role">Postdoctoral Researcher</div>
+      <div class="org">University of Utah · Advisor: Henry S. White</div>
+      <div class="when">February 2017 &ndash; March 2018</div>
+    </div>
+    <div class="timeline-item">
+      <div class="role">Ph.D. in Mathematics &mdash; Aspects of Electrochemical Transport Phenomena</div>
+      <div class="org">Case Western Reserve University · Advisor: Daniel A. Scherson</div>
+      <div class="when">August 2011 &ndash; January 2017</div>
+    </div>
+    <div class="timeline-item">
+      <div class="role">B.S. Biochemistry · B.A. Philosophy</div>
+      <div class="org">Northern Kentucky University</div>
+      <div class="when">August 2005 &ndash; May 2011 · Entered college at age 15</div>
     </div>
   </div>
 </section>
 
-<!-- ============ GAMES ============ -->
-<section class="content" id="games">
-  <h2 class="section-title">Games</h2>
+<section class="content" id="opensource">
+  <h2 class="section-title">Open Source</h2>
+  <p class="profiles">
+    Maintainer profiles &mdash; full lists live on each:<br>
+    &mdash; <a href="https://github.com/NGeorgescu">GitHub &mdash; github.com/NGeorgescu</a><br>
+    &mdash; <a href="https://pypi.org/user/NGeorgescu/">PyPI &mdash; pypi.org/user/NGeorgescu</a><br>
+    &mdash; <a href="https://aur.archlinux.org/packages?SeB=m&K=NGeorgescu">AUR &mdash; Arch User Repository</a><br>
+    &mdash; <a href="https://oeis.org/wiki/User:Nicholas_Stefan_Georgescu">OEIS &mdash; sequence contributions</a>
+  </p>
+  <div class="cards">
+    <div class="card"><h4><a href="https://github.com/NGeorgescu/dotfiles">dotfiles</a></h4><p>Personal dotfiles for Debian / i3.</p><span class="tag">Shell</span></div>
+  </div>
+</section>
+
+<section class="content" id="elsewhere">
+  <h2 class="section-title">Elsewhere on this site</h2>
   <div class="cards">
     <div class="card">
-      <h4><a href="https://ngeorgescu.github.io/games/play.html" target="_blank" rel="noopener">▶ Play</a></h4>
-      <p>Active drills &mdash; perception, memory, arithmetic. Hue Sense, Grid Memory, Mental Math.</p>
-      <span class="tag">Playable</span>
+      <h4><a href="math.html">Math</a></h4>
+      <p>Independent research in discrete mathematics &mdash; intransitive dice, the Hydra game, OEIS contributions.</p>
+      <span class="tag">Notebooks · Combinatorics</span>
     </div>
     <div class="card">
-      <h4><a href="https://ngeorgescu.github.io/games/strategy.html" target="_blank" rel="noopener">♟ Strategize</a></h4>
-      <p>Decision-support and study tools &mdash; not games you play but games you prepare for. COMBO (MTG brewing) and Chess Repertoire Explorer.</p>
-      <span class="tag">Strategy</span>
+      <h4><a href="science.html">Science</a></h4>
+      <p>Ten peer-reviewed publications on electrochemical transport phenomena.</p>
+      <span class="tag">Electrochemistry · 2014&ndash;2017</span>
+    </div>
+    <div class="card">
+      <h4><a href="games/">Games</a></h4>
+      <p>A small shelf of browser games &mdash; perception, memory, arithmetic, and strategy tools.</p>
+      <span class="tag">Browser · Playable</span>
     </div>
   </div>
-
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer id="contact">
   <div class="socials">
     <a href="https://github.com/NGeorgescu">GitHub</a>
