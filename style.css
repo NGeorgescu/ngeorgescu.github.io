@@ -95,18 +95,15 @@ h3.sub-title { font-family: var(--serif); font-weight: 400; font-size: 1.5rem; m
 }
 .bio p.dim { color: var(--fg-dim); }
 
-/* CARDS */
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
-.card {
-  background: var(--bg-card); border: 1px solid var(--rule);
-  padding: 1.5rem; transition: border-color 0.2s;
-}
-.card:hover { border-color: var(--accent); }
-.card h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+/* ITEM LIST (was cards) */
+.cards { display: block; margin-top: 1rem; }
+.card { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+.card:last-child { border-bottom: none; }
+.card h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.35rem; }
 .card h4 a { color: var(--fg); }
 .card h4 a:hover { color: var(--accent-soft); }
-.card p { color: var(--fg-dim); font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.8rem; }
-.card .tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-faint); }
+.card p { color: var(--fg-dim); font-size: 1rem; line-height: 1.6; margin-bottom: 0.35rem; font-family: var(--serif); }
+.card .tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-faint); }
 
 /* PUBLICATIONS */
 ol.pubs { list-style: none; counter-reset: pubs; }
