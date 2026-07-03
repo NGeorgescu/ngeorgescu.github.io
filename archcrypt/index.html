@@ -2,21 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>archcrypt &mdash; download</title>
-<meta http-equiv="refresh" content="0; url=https://github.com/NGeorgescu/archcrypt/archive/refs/heads/main.tar.gz">
+<title>archcrypt &mdash; encrypted Arch install scripts</title>
 <link rel="stylesheet" href="/style.css">
+<style>
+  pre { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 6px;
+        padding: 1rem 1.2rem; margin: 1rem 0 2rem; overflow: auto;
+        font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.95rem;
+        color: var(--fg); line-height: 1.5; }
+</style>
 </head>
 <body>
-<section class="content" style="padding-top: 4rem; text-align:center;">
-  <h1 style="font-family: var(--serif); font-size: 2rem; margin-bottom: 1rem;">archcrypt</h1>
-  <p>Downloading the install-scripts tarball&hellip;</p>
-  <p style="margin-top: 1.5rem;">
-    If your download doesn't start automatically,
-    <a href="https://github.com/NGeorgescu/archcrypt/archive/refs/heads/main.tar.gz">click here</a>.
+
+<section class="content" style="padding-top: 5rem;">
+  <h1 style="font-family: var(--serif); font-size: 2.6rem; margin-bottom: 1.2rem;">archcrypt</h1>
+  <p class="lede" style="font-family: var(--serif); font-size: 1.15rem; color: var(--fg-dim); max-width: 60ch; line-height: 1.7;">
+    Shell scripts for a full-disk-encrypted (LUKS) Arch Linux install.
+    Run in numeric order from the Arch install ISO. Fetch the tarball
+    with one command:
   </p>
-  <p style="margin-top: 2rem; color: var(--fg-faint); font-size: 0.85rem;">
-    Source: <a href="https://github.com/NGeorgescu/archcrypt">github.com/NGeorgescu/archcrypt</a>
+
+  <h3 class="sub-title">From an Arch install disk</h3>
+  <pre>curl -sL ngeorgescu.github.io/archcrypt.tar.gz | tar xz</pre>
+
+  <h3 class="sub-title">Or download it manually</h3>
+  <pre>curl -O ngeorgescu.github.io/archcrypt.tar.gz</pre>
+
+  <h3 class="sub-title">In a browser</h3>
+  <p style="font-family: var(--serif); font-size: 1.05rem; color: var(--fg-dim);">
+    <a href="/archcrypt.tar.gz">Download archcrypt.tar.gz</a> &middot;
+    <a href="https://github.com/NGeorgescu/archcrypt">source on GitHub</a>
   </p>
 </section>
+
+<footer style="text-align:center;padding:1.5rem 1rem 2rem;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fg-dim);border-top:1px solid var(--rule);margin-top:3rem;font-family:var(--sans)">
+  <a href="/" style="color:var(--accent);text-decoration:none">↩ nsg</a>
+</footer>
+
 </body>
 </html>
