@@ -75,7 +75,7 @@ nav.top ul a.active { color: var(--accent-soft); }
 }
 .page-header h1 {
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.1;
+  font-size: clamp(2.8rem, 5vw, 3.8rem); line-height: 1.1;
 }
 .page-header .lede {
   font-family: var(--serif); font-size: 1.15rem;
