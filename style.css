@@ -1,13 +1,13 @@
 :root {
-  --bg: #0e0b0c;
-  --bg-soft: #161112;
-  --bg-card: #181315;
-  --fg: #f3ece9;
-  --fg-dim: #b9aca8;
-  --fg-faint: #786a66;
-  --accent: #8a2a3a;
-  --accent-soft: #c45a6c;
-  --rule: #2a1f22;
+  --bg: #0e1014;
+  --bg-soft: #12151b;
+  --bg-card: #171a21;
+  --fg: #eef1f6;
+  --fg-dim: #9aa3b2;
+  --fg-faint: #6b7280;
+  --accent: #7cc6ff;
+  --accent-soft: #a8dcff;
+  --rule: #262b35;
   --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
@@ -56,10 +56,10 @@ nav.top ul a.active { color: var(--accent-soft); }
   font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
   transition: background 0.2s ease;
 }
-.cta:hover { background: var(--accent); color: var(--fg); }
+.cta:hover { background: var(--accent); color: var(--bg); }
 .hero-portrait {
   position: relative; aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, #1a1214 0%, #2a1820 100%);
+  background: linear-gradient(135deg, #12161f 0%, #1e2532 100%);
   border: 1px solid var(--rule);
   overflow: hidden;
 }
