@@ -153,6 +153,44 @@ p.profiles {
 p.profiles a { color: var(--accent-soft); }
 p.profiles a:hover { color: var(--fg); }
 
+/* TESTIMONIAL */
+.kicker {
+  display: inline-block; margin-bottom: 0.8rem;
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent-soft); border: 1px solid var(--rule);
+  padding: 0.35rem 0.8rem; border-radius: 999px;
+}
+.testimonial-context {
+  font-family: var(--serif); font-size: 1.1rem; line-height: 1.7;
+  color: var(--fg-dim); max-width: 60ch; margin-bottom: 2rem;
+}
+.testimonial-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 2rem; align-items: stretch;
+}
+.testimonial-grid video {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  background: #000; border: 1px solid var(--rule);
+}
+.testimonial-quotes {
+  background: var(--bg-card); border: 1px solid var(--rule);
+  padding: 1.5rem 1.7rem;
+}
+.testimonial-quotes blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.05rem; line-height: 1.5; color: var(--fg);
+  padding-left: 1.1rem; border-left: 2px solid var(--accent);
+  margin-bottom: 1.1rem;
+}
+.testimonial-quotes figcaption {
+  color: var(--fg); font-size: 0.95rem; font-family: var(--serif);
+}
+.testimonial-quotes figcaption span {
+  display: block; margin-top: 0.3rem;
+  color: var(--fg-faint); font-family: var(--sans);
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
 /* FOOTER */
 footer { padding: 3.5rem 2rem; text-align: center; color: var(--fg-dim);
          font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -169,4 +207,6 @@ footer .socials a { margin: 0 0.9rem; }
   section.content { padding: 3rem 1.5rem; }
   .page-header { padding: 3rem 1.5rem 0.5rem; }
   h2.section-title { font-size: 1.8rem; }
+  .testimonial-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .testimonial-grid video { height: auto; aspect-ratio: 16 / 9; }
 }
